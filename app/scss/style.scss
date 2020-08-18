@@ -1,0 +1,145 @@
+@import "vars";
+@import "libs";
+@import "fonts";
+@import "global";
+
+.main__content {
+  display: flex;
+}
+.asside__bar {
+  background-color: $bg;
+  max-width: 275px;
+
+  &-avatar {
+    width: 275px;
+    height: 222px;
+    position: relative;
+    background-position: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    &:before {
+      content: "";
+      position: absolute;
+      background-color: rgba(0, 0, 0, 0.4);
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+    }
+  }
+  &-name {
+    z-index: 1;
+    color: #ffffff;
+    padding-left: 30px;
+    font-size: 28px;
+    font-weight: 500;
+  }
+  &-position {
+    z-index: 1;
+    color: #ffffff;
+    padding-left: 30px;
+    font-size: 14px;
+    line-height: 30px;
+  }
+  &-menu {
+  }
+  &-menu-list {
+    li {
+      padding-left: 30px;
+      border-bottom: 1px solid #282835;
+    }
+    a {
+      font-size: 22px;
+      line-height: 62px;
+      color: #ffffff;
+    }
+  }
+}
+/* Start header section */
+.main__box {
+  width: 100%;
+}
+.header {
+  background-color: $bg;
+  width: 100%;
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 110px 0;
+  }
+  &__title {
+    color: #ffffff;
+    font-size: 48px;
+    line-height: 36px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  &__text {
+    font-size: 14px;
+    line-height: 29px;
+    color: #ffffff;
+    max-width: 495px;
+    text-align: center;
+    margin-bottom: 50px;
+  }
+  &__btn {
+    a {
+      color: #ffffff;
+      background-color: $red;
+      padding: 15px 43px;
+      border-radius: 15.5px;
+    }
+  }
+}
+/* End header section */
+/* Start about me section */
+.about__me {
+  &-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 80px 0 80px 115px;
+  }
+  &-content {
+    padding-top: 40px;
+    max-width: 360px;
+    &-text {
+      font-size: 14px;
+      line-height: 26px;
+      padding-top: 30px;
+      margin-bottom: 25px;
+    }
+    .about__me-info {
+      .about__me-name,
+      .about__me-age,
+      .about__me-email,
+      .about__me-web,
+      .about__me-adress {
+        font-size: 18px;
+        line-height: 50px;
+        font-weight: 600;
+        span {
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  &-picture {
+    width: 320px;
+    height: 465px;
+    background-position-y: -45px;
+    background-position-x: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    border-radius: 50px;
+  }
+}
+
+/* End about me section */
+
+@import "media";
