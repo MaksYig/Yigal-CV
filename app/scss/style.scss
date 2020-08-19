@@ -104,6 +104,7 @@
     display: flex;
     justify-content: space-between;
     padding: 80px 0 80px 115px;
+    // border-bottom: 1px solid #e5e5e5;
   }
   &-content {
     padding-top: 40px;
@@ -115,6 +116,7 @@
       margin-bottom: 25px;
     }
     .about__me-info {
+      background-color: #f9f9f9;
       .about__me-name,
       .about__me-age,
       .about__me-email,
@@ -123,6 +125,7 @@
         font-size: 18px;
         line-height: 50px;
         font-weight: 600;
+        border-bottom: 1px solid #e0e0e0;
         span {
           font-weight: 400;
         }
@@ -141,5 +144,194 @@
 }
 
 /* End about me section */
+
+/* start work section */
+.work{
+  overflow: hidden;
+  &__wrapper{
+    padding: 80px 0 80px 115px;
+  }
+}
+
+
+
+/* TIMELINE
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul {
+  // background: #456990;
+  padding: 50px 0;
+}
+
+.timeline ul li {
+  list-style-type: none;
+  position: relative;
+  width: 6px;
+  margin: 0 auto;
+  padding-top: 15px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  line-height: 22px;
+}
+
+.timeline ul li::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: inherit;
+}
+
+.timeline ul li div {
+  position: relative;
+  bottom: 0;
+  width: 400px;
+  padding: 15px;
+  background: #353541;
+}
+
+.timeline ul li div::before {
+  content: '';
+  position: absolute;
+  bottom: 7px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.timeline ul li:nth-child(odd) div {
+  left: 45px;
+}
+
+.timeline ul li:nth-child(odd) div::before {
+  left: -15px;
+  border-width: 8px 16px 8px 0;
+  border-color: transparent #353541 transparent transparent;
+}
+
+.timeline ul li:nth-child(even) div {
+  left: -439px;
+}
+
+.timeline ul li:nth-child(even) div::before {
+  right: -15px;
+  border-width: 8px 0 8px 16px;
+  border-color: transparent transparent transparent #353541;
+}
+
+time {
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 8px;
+  color: #fff;
+  span{
+    color: $red;
+  }
+}
+
+
+/* EFFECTS
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.timeline ul li::after {
+  transition: background .5s ease-in-out;
+}
+
+.timeline ul li.in-view::after {
+  background: #353541;
+}
+
+.timeline ul li div {
+  visibility: hidden;
+  opacity: 0;
+  transition: all .5s ease-in-out;
+}
+
+.timeline ul li:nth-child(odd) div {
+  transform: translate3d(200px, 0, 0);
+}
+
+.timeline ul li:nth-child(even) div {
+  transform: translate3d(-200px, 0, 0);
+}
+
+.timeline ul li.in-view div {
+  transform: none;
+  visibility: visible;
+  opacity: 1;
+}
+
+
+/* GENERAL MEDIA QUERIES
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+@media screen and (max-width: 900px) {
+  .timeline ul li div {
+    width: 250px;
+  }
+  .timeline ul li:nth-child(even) div {
+    left: -289px;
+    /*250+45-6*/
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .timeline ul li {
+    margin-left: 20px;
+  }
+  .timeline ul li div {
+    width: calc(100vw - 91px);
+  }
+  .timeline ul li:nth-child(even) div {
+    left: 45px;
+  }
+  .timeline ul li:nth-child(even) div::before {
+    left: -15px;
+    border-width: 8px 16px 8px 0;
+    border-color: transparent #F45B69 transparent transparent;
+  }
+}
+
+
+/* end work section */
+
+/* start education section */
+.education{
+  overflow: hidden;
+  &__wrapper{
+    padding: 80px 0 80px 115px;
+  }
+}
+/* end education section */
+
+/* start skills section */
+.skills{
+  background-color:#1d1d24;
+  height: 500px;
+  &__wrapper{
+    padding: 65px 0 80px 115px;
+    .section__name{
+      color: #ffffff;
+
+    }
+  }
+  &__progress-inner{
+    display: flex;
+    justify-content: space-between;
+  }
+  &__box{
+    width: 360px;
+  }
+}
+
+
+
+/* end skills section */
 
 @import "media";
