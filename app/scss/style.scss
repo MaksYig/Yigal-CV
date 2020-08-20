@@ -10,6 +10,7 @@
   background-color: $bg;
   max-width: 275px;
   position: relative;
+  
 
   &-avatar {
     width: 275px;
@@ -59,34 +60,80 @@
       color: #ffffff;
     }
   }
-  .header__burger {
+  
+}
+.header__burger {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 5;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  transition: all .5s;
+  &::before {
     position: absolute;
+    content: "";
     width: 30px;
-    height: 30px;
-    z-index: 5;
-    top: 20px;
-    left: 20px;
-    cursor: pointer;
-    &::before {
-      position: absolute;
-      content: "";
-      width: 30px;
-      height: 2px;
-      background-color: $red;
-      top: 0;
-      left: 0;
-      transform: rotate(45deg);
-    }
-    &::after {
-      position: absolute;
-      content: "";
-      width: 30px;
-      height: 2px;
-      background-color: $red;
-      top: 0;
-      left: 0;
-      transform: rotate(-45deg);
-    }
+    height: 2px;
+    background-color: $red;
+    top: 0;
+    left: 0;
+    transform: rotate(45deg);
+    transition: all .5s;
+  }
+  &::after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: $red;
+    top: 0;
+    left: 0;
+    transform: rotate(-45deg);
+    transition: all .5s;
+  }
+}
+.asside__bar.close{
+ display: none;
+}
+.header__burger.close{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  z-index: 5;
+  top: 20px;
+  left: 20px;
+  &:before{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: $red;
+    top: -7px;
+    left: 0px;
+    transform: rotate(0);
+  }
+    span{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: $red;
+    top: 0px;
+    left: 0px;
+    transition: all .5s;
+
+  }
+  &:after{
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: $red;
+    top: 7px;
+    left: 0px;
+    transform: rotate(0);
   }
 }
 /* Start header section */
@@ -133,7 +180,7 @@
   &-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 80px 0 80px 115px;
+    padding: 40px 0 40px 115px;
     // border-bottom: 1px solid #e5e5e5;
   }
   &-content {
@@ -179,7 +226,7 @@
 .work {
   overflow: hidden;
   &__wrapper {
-    padding: 80px 0 80px 115px;
+    padding: 40px 0 40px 115px;
   }
 }
 
@@ -330,7 +377,7 @@ time {
 .education {
   overflow: hidden;
   &__wrapper {
-    padding: 80px 0 80px 115px;
+    padding: 40px 0 40px 115px;
   }
 }
 /* end education section */
@@ -339,7 +386,7 @@ time {
 .skills {
   background-color: #1d1d24;
   &__wrapper {
-    padding: 65px 0 80px 115px;
+    padding: 40px 0 40px 115px;
     .section__name {
       color: #ffffff;
     }
