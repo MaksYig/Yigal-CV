@@ -33,6 +33,59 @@ $(function () {
     window.addEventListener("scroll", callbackFunc);
   })();
 
+  jQuery(document).ready(function () {
+    /*MODIFICATION START*/
+    jQuery(document).on("scroll", function () {
+      if (jQuery("html,body").scrollTop() > jQuery(".skills").height()) {
+        /*MODIFICATION END*/
+        jQuery(".progress-bar").each(function () {
+          jQuery(this)
+            .find(".progress-content")
+            .animate(
+              {
+                width: jQuery(this).attr("data-percentage"),
+              },
+              8000
+            );
+
+          jQuery(this)
+            .find(".progress-number-mark")
+            .animate(
+              {
+                left: jQuery(this).attr("data-percentage"),
+              },
+              {
+                duration: 8000,
+                step: function (now, fx) {
+                  var data = Math.round(now);
+                  jQuery(this)
+                    .find(".percent")
+                    .html(data + "%");
+                },
+              }
+            );
+        });
+        /*MODIFICATION START*/
+      }
+    });
+    /*MODIFICATION END*/
+  });
+
+  $("#menu").on("click","a", function (event) {
+		//отменяем стандартную обработку нажатия по ссылке
+		event.preventDefault();
+
+		//забираем идентификатор бока с атрибута href
+		var id  = $(this).attr('href'),
+
+		//узнаем высоту от начала страницы до блока на который ссылается якорь
+			top = $(id).offset().top;
+		
+		//анимируем переход на расстояние - top за 1500 мс
+		$('body,html').animate({scrollTop: top}, 1500);
+	});
 
 
+
+  
 });

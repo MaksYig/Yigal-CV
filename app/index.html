@@ -23,17 +23,20 @@
               <div class="asside__bar-name">Yigal Maksimov</div>
               <div class="asside__bar-position">Web Developer (Junior)</div>
             </div>
-            <nav class="asside__bar-menu">
+            <nav class="asside__bar-menu" id="menu">
               <ul class="asside__bar-menu-list">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About Me</a></li>
-                <li><a href="#">Education</a></li>
-                <li><a href="#">Work Expirience</a></li>
-                <li><a href="#">Skils</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#sec1">About Me</a></li>
+                <li><a href="#sec2">Education</a></li>
+                <li><a href="#sec3">Work Expirience</a></li>
+                <li><a href="#sec4">Skils</a></li>
                 <li><a href="#">Portfolio</a></li>
-                <li><a href="#">Contacts</a></li>
+                <li><a href="#sec5">Contacts</a></li>
               </ul>
             </nav>
+            <div class="header__burger">
+              <span></span>
+            </div>
           </section>
           <section class="main__box">
             <div class="header">
@@ -42,12 +45,12 @@
                 <div class="header__title">Lets Make Something Great</div>
                 <div class="header__text">I’m an UI designer that prides ourself on being strategic brand partners and awesome product providers</div>
                 <div class="header__btn">
-                  <a href="#">Hire Me!</a>
+                  <a data-fancybox data-src="#modal" href="javascript:;">Hire Me!</a>
                 </div>
               </div>
             </div>
             </div>
-            <section class="about__me">
+            <section class="about__me" id="sec1">
               <div class="container">
                 <div class="about__me-wrapper">
                   <div class="about__me-content">
@@ -81,7 +84,7 @@
               </div>
               
             </section>
-            <section class="work">
+            <section class="work" id="sec3">
               <div class="container">
                 <div class="work__wrapper">
                 <div class="section__name">
@@ -99,7 +102,7 @@
               </div>
               </div>
             </section>
-            <section class="education">
+            <section class="education" id="sec2">
               <div class="container">
                 <div class="education__wrapper">
                 <div class="section__name">
@@ -132,30 +135,227 @@
               </div>
               </div>
             </section>
-            <section class="skills">
+            <section class="skills" id="sec4">
               <div class="container">
-                <div class="skills__wrapper">
+                <div class="skills__wrapper"id="second-sec">
                   <div class="section__name">
                     My Skills
                   </div>
                   <div class="skills__progress-inner">
-                    <div class="skills__box">
+                    <div class="skills__box" id="third-sec">
+                      <div class="progress-bar" data-percentage="90%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">HTML5</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
                       
-
                       
+                      
+                      </div>
+                      <div class="progress-bar" data-percentage="90%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">CSS3</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
+                      
+                      
+                      
+                      </div>
+                      <div class="progress-bar" data-percentage="35%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">JS</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
+                      </div>
+                      <div class="progress-bar" data-percentage="5%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">ReactJS</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
+                      </div>
+                      <div class="progress-bar" data-percentage="75%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">WordPress</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="skills__box" id="third-sec">
+                      <div class="progress-bar" data-percentage="80%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">SASS</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                          
+                        </div>
+                        
+                      </div>
+                      <div class="progress-bar" data-percentage="70%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">GULP</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
+                      </div>
+                      <div class="progress-bar" data-percentage="80%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">Photoshop/Figma</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
+                      </div>
+                      <div class="progress-bar" data-percentage="30%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">Github</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
+                      </div>
+                      <div class="progress-bar" data-percentage="55%">
+                        <h4 class="progress-title-holder">
+                          <span class="progress-title">WordPress Elementor</span>
+                           <span class="progress-number-wrapper">
+                        <span class="progress-number-mark">
+                          <span class="percent"></span>
+                           <span class="down-arrow"></span>
+                          </span>
+                          </span>
+                          </h4>
+                        <div class="progress-content-outter">
+                          <div class="progress-content"></div>
+                        </div>
+                      </div>
+                    </div>
+                    
+                </div>
+                <div class="language">
+                  <div class="section__name">
+                    Languages that I talk
+                  </div>
+                  <div class="language__wrapper">
+                  <div class="progress-bar" data-percentage="80%">
+                    <h4 class="progress-title-holder">
+                      <span class="progress-title">English</span>
+                       <span class="progress-number-wrapper">
+                    <span class="progress-number-mark">
+                      <span class="percent"></span>
+                       <span class="down-arrow"></span>
+                      </span>
+                      </span>
+                      </h4>
+                    <div class="progress-content-outter">
+                      <div class="progress-content"></div>
                       
                     </div>
-                    <div class="skills__box">
-                      
-                      
+                    
+                  </div>
+                  <div class="progress-bar" data-percentage="90%">
+                    <h4 class="progress-title-holder">
+                      <span class="progress-title">Hebrew</span>
+                       <span class="progress-number-wrapper">
+                    <span class="progress-number-mark">
+                      <span class="percent"></span>
+                       <span class="down-arrow"></span>
+                      </span>
+                      </span>
+                      </h4>
+                    <div class="progress-content-outter">
+                      <div class="progress-content"></div>
                       
                     </div>
+                    
+                  </div>
+                  <div class="progress-bar" data-percentage="95%">
+                    <h4 class="progress-title-holder">
+                      <span class="progress-title">Russian</span>
+                       <span class="progress-number-wrapper">
+                    <span class="progress-number-mark">
+                      <span class="percent"></span>
+                       <span class="down-arrow"></span>
+                      </span>
+                      </span>
+                      </h4>
+                    <div class="progress-content-outter">
+                      <div class="progress-content"></div>
+                      
+                    </div>
+                    
                   </div>
                 </div>
               </div>
+              </div>
+              
             </section>
 
-            <section class="contact">
+            <section class="contact" id="sec5">
               <div class="container">
                 <div class="contact__wrapper">
                   <div class="contact__message">
@@ -166,14 +366,26 @@
                       <input type="text" placeholder="Name">
                       <input type="email" placeholder="Email">
                       <textarea cols="30" rows="10" placeholder="Message"></textarea>
-                      <div class="message__btn">
-                        <a href="#">Hire Me!</a>
-                      </div>
+                      <button class="message__btn" type="submit">
+                        Hire Me!
+                      </button>
                     </form>
                   </div>
                   <div class="contact__contacts">
                     <div class="contact__item">
-                      
+                      <div class="contact__location">
+                        Current Location
+                        <p>Greece, Attiki,Piraues</p>
+                        
+                      </div>
+                      <div class="contact__email">
+                        Email adress
+                        <p> <a href="#">yigal.maksimov@gmail.com</a> </p>
+                      </div>
+                      <div class="contact__phone">
+                        Phone number
+                        <p><a href="tel:+306843811801">+30 694 381 1801</a></p>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -183,15 +395,43 @@
           </section>
         </div>
 
-
-
-
-
-
-
-
       </main>
-      <footer class="footer"></footer>
+      <footer class="footer">
+        
+        <div class="footer__inner">
+          <div class="footer__social">
+            
+            <ul class="footer__social-list">
+              <li><a class="icon-facebook-square" href="#"></a></li>
+              <li><a class="icon-linkedin-square" href="#"></a></li>
+              <li><a class="icon-telegram" href="#"></a></li>
+            </ul>
+          </div>
+        
+          <div class="footer__copy">
+            Copyright: Yigal Maksimov, All rights reserved
+          </div>
+        </div>
+      
+      </footer>
+
+<!-- Popup windo -->
+<div style="display: none;" id="modal">
+  <form class="contact__form">
+    <input type="text" placeholder="Name">
+    <input type="email" placeholder="Email">
+    <textarea cols="30" rows="10" placeholder="Message"></textarea>
+    <button class="message__btn" type="submit">
+      Hire Me!
+    </button>
+  </form>
+</div>
+
+
+<!-- Popup windo -->
+
+
+
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/libs.min.js"></script>
