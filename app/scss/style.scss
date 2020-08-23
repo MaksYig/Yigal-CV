@@ -634,4 +634,158 @@ padding-right: 25px; /* Separate bars from container */
 }
 /* end footer section */
 
+
+/* Start portfolio section */
+.portfolio{
+  &__wrapper{
+    padding: 80px 0 80px 115px;
+  }
+  &__inner{
+
+  }
+  &__menu-box{
+
+  }
+  &__menu{
+    padding-left: 17px;
+    margin-top: 40px;
+    padding-bottom: 2px;
+    // border-bottom: 2px solid #cccccc;
+    display: flex;
+    justify-content: space-between;
+    li{
+      display: inline-block;
+      &:focus{
+        border-bottom: 2px solid $red;
+        overflow: hidden;
+      }
+      a{
+        font-size: 18px;
+        line-height: 50px;
+        font-weight: 600;
+        text-transform: uppercase;
+        
+      }
+    }
+  }
+  &__items{
+    margin-top: 70px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+  }
+  &__item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 320px;
+    margin-top: 20px;
+    width: 100%;
+    &-img{
+      width: 320px;
+      height: 223px;
+      background-color: #000;
+
+    }
+    &-content{
+      background-color: #1e2e3e;
+      width: 100%;
+
+    }
+    &-title{
+      color: #fff;
+      font-size: 20px;
+      line-height: 50px;
+      font-weight: 500;
+      padding-left: 17px;
+    }
+    &-subtitle{
+      color: #fff;
+      font-size: 16px;
+      line-height: 50px;
+      padding-left: 17px;
+
+
+    }
+    &-btn{
+      padding-bottom: 17px;
+      padding-left: 17px;
+      font-size: 14px;
+      color: #fff;
+      a{
+        border-bottom: 1px solid #fff;
+      }
+    }
+  }
+}
+
+/* End portfolio section */
+
+/* start portfolio-single page */
+.portfolio__single{
+  &-box{
+    
+  }
+  &-wrapper{
+    margin-bottom: 35px;
+
+  }
+  &-img{
+    max-width: 750px;
+    height: 447px;
+    background-color: #000;
+    margin: 0 auto;
+  }
+  &-content{
+    background-color: #3d4f59;
+    max-width: 750px;
+    margin: 0 auto;
+  }
+  &-title{
+    font-size: 28px;
+    line-height: 50px;
+    padding-left: 17px;
+    color: #fff;
+    a{
+      span{
+        font-size: 16px;
+        padding-left: 10px;
+      }
+    }
+  }
+  &-subtitle{
+    font-size: 18px;
+    line-height: 50px;
+    padding-left: 17px;
+    color: #fff;
+  }
+  &-text{
+    font-size: 16px;
+    line-height: 26px;
+    max-width: 750px;
+    margin: 0 auto;
+ 
+  }
+  &-icons{
+    &-list{
+      max-width: 750px;
+      margin: 0 auto;
+      padding-top: 35px;
+      li{
+        display: inline-block;
+        font-size: 30px; 
+        margin-right: 15px;
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+
+
+/* end portfolio-single page */
+
 @import "media";
