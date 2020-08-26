@@ -1,0 +1,100 @@
+@media (max-width: 1500px) {
+  .asside__bar {
+    max-width: 200px;
+    &-avatar {
+      width: 200px;
+    }
+    &-name {
+      font-size: 20px;
+      line-height: 25px;
+    }
+    &-position {
+      font-size: 12px;
+      line-height: 20px;
+    }
+    &-menu-list a {
+      font-size: 16px;
+      line-height: 50px;
+    }
+  }
+}
+@media (max-width: 1200px) {
+  .about__me-wrapper,
+  .work__wrapper,
+  .education__wrapper,
+  .skills__wrapper,
+  .contact__wrapper {
+    padding: 20px 20px 40px 20px;
+  }
+  .timeline ul li:nth-child(odd) div {
+    left: 35px;
+  }
+  .skills__progress-inner{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 830px) {
+  .about__me-picture {
+    width: 250px;
+    height: 250px;
+    background-position-y: 0;
+  }
+  .about__me-content .about__me-info .about__me-name,
+  .about__me-content .about__me-info .about__me-age,
+  .about__me-content .about__me-info .about__me-email,
+  .about__me-content .about__me-info .about__me-web,
+  .about__me-content .about__me-info .about__me-adress {
+    font-size: 14px;
+    line-height: 40px;
+  }
+  .contact__wrapper{
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 670px) {
+  .header__title {
+    font-size: 36px;
+    text-align: center;
+  }
+  .header__text {
+    font-size: 12px;
+  }
+  .about__me-wrapper {
+    flex-direction: column-reverse;
+    align-items: center;
+  }
+  .about__me-content-text {
+    text-align: center;
+  }
+  .about__me-content .about__me-info .about__me-name,
+  .about__me-content .about__me-info .about__me-age,
+  .about__me-content .about__me-info .about__me-email,
+  .about__me-content .about__me-info .about__me-web,
+  .about__me-content .about__me-info .about__me-adress {
+    text-align: center;
+    font-size: 13px;
+  }
+  .timeline ul li div {
+    width: calc(100vw - 120px);
+  }
+  .contact__item {
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+}
+@media(max-width:580px){
+  .contact__message{
+    margin-right: 0;
+  }
+  .footer__copy{
+    font-size: 10px;
+  }
+}

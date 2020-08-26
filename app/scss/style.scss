@@ -6,11 +6,18 @@
 .main__content {
   display: flex;
 }
-.asside__bar {
+.asside__bar.close {
+  position: absolute;
+  top: -200%;
+  transition: all 0.9s;
+}
+
+.asside__bar{
   background-color: $bg;
   max-width: 275px;
-  position: relative;
-  
+  position: fixed;
+  transition: all 0.9s;
+  top: 0;
 
   &-avatar {
     width: 275px;
@@ -58,29 +65,32 @@
       font-size: 22px;
       line-height: 62px;
       color: #ffffff;
+      &:focus{
+        color:$red;
+      }
     }
   }
-  
 }
-.header__burger {
-  position: absolute;
+
+.header__burger.closed {
+  position: fixed;
   width: 30px;
-  height: 30px;
+  height: 20px;
   z-index: 5;
   top: 20px;
   left: 20px;
   cursor: pointer;
-  transition: all .5s;
+  transition: all 0.5s;
   &::before {
     position: absolute;
     content: "";
     width: 30px;
     height: 2px;
     background-color: $red;
-    top: 0;
+    top: 6px;
     left: 0;
     transform: rotate(45deg);
-    transition: all .5s;
+    transition: all 0.5s;
   }
   &::after {
     position: absolute;
@@ -88,33 +98,24 @@
     width: 30px;
     height: 2px;
     background-color: $red;
-    top: 0;
+    top: 6px;
     left: 0;
     transform: rotate(-45deg);
-    transition: all .5s;
+    transition: all 0.5s;
+  }
+  span{
+    transform: scale(0);
   }
 }
-.asside__bar.close{
- display: none;
-}
-.header__burger.close{
+
+.header__burger {
   position: absolute;
   width: 30px;
-  height: 30px;
+  height: 20px;
   z-index: 5;
   top: 20px;
   left: 20px;
-  &:before{
-    position: absolute;
-    content: "";
-    width: 30px;
-    height: 2px;
-    background-color: $red;
-    top: -7px;
-    left: 0px;
-    transform: rotate(0);
-  }
-    span{
+  &:before {
     position: absolute;
     content: "";
     width: 30px;
@@ -122,16 +123,25 @@
     background-color: $red;
     top: 0px;
     left: 0px;
-    transition: all .5s;
-
+    transform: rotate(0);
   }
-  &:after{
+  span {
     position: absolute;
     content: "";
     width: 30px;
     height: 2px;
     background-color: $red;
     top: 7px;
+    left: 0px;
+    transition: all 0.5s;
+  }
+  &:after {
+    position: absolute;
+    content: "";
+    width: 30px;
+    height: 2px;
+    background-color: $red;
+    top: 14px;
     left: 0px;
     transform: rotate(0);
   }
@@ -403,6 +413,7 @@ time {
 .progress-bar {
   margin: 20px 0 10px;
   overflow: hidden;
+  max-width: 320px;
   /*padding-left:20px;
 padding-right: 25px; /* Separate bars from container */
 }
@@ -500,7 +511,8 @@ padding-right: 25px; /* Separate bars from container */
     padding: 80px 0 80px 115px;
   }
   &__message {
-    width: 265px;
+    max-width: 265px;
+    margin-right: 25px;
     &-title {
       font-size: 22px;
       line-height: 50px;
@@ -511,17 +523,19 @@ padding-right: 25px; /* Separate bars from container */
     display: flex;
     flex-direction: column;
     input {
-      width: 265px;
-      height: 35px;
+      max-width: 265px;
+      width: 100%;
+      max-height: 35px;
       margin-bottom: 20px;
-      padding-left: 12px;
+      padding:5px 0 5px 12px;
       outline: none;
     }
     textarea {
       padding-left: 12px;
       padding-top: 12px;
       height: 95px;
-      width: 265px;
+      max-width: 265px;
+      width: 100%;
       outline: none;
       margin-bottom: 20px;
     }
@@ -537,20 +551,22 @@ padding-right: 25px; /* Separate bars from container */
     }
   }
   &__contacts {
-    width: 360px;
+    width: 350px;
+    
   }
   &__item {
   }
   &__location {
     padding-left: 95px;
     position: relative;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     margin-bottom: 55px;
 
     p {
       margin-top: 20px;
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 500;
     }
     &::before {
       position: absolute;
@@ -564,8 +580,8 @@ padding-right: 25px; /* Separate bars from container */
   &__email {
     padding-left: 95px;
     position: relative;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     margin-bottom: 55px;
     &::before {
       position: absolute;
@@ -577,14 +593,15 @@ padding-right: 25px; /* Separate bars from container */
     }
     p {
       margin-top: 20px;
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 500;
     }
   }
   &__phone {
     padding-left: 95px;
     position: relative;
-    font-size: 18px;
-    font-weight: 600;
+    font-size: 20px;
+    font-weight: 700;
     margin-bottom: 55px;
     &::before {
       position: absolute;
@@ -596,7 +613,8 @@ padding-right: 25px; /* Separate bars from container */
     }
     p {
       margin-top: 20px;
-      font-size: 14px;
+      font-size: 16px;
+      font-weight: 500;
     }
   }
 }
@@ -634,48 +652,43 @@ padding-right: 25px; /* Separate bars from container */
 }
 /* end footer section */
 
-
 /* Start portfolio section */
-.portfolio{
-  &__wrapper{
+.portfolio {
+  &__wrapper {
     padding: 80px 0 80px 115px;
   }
-  &__inner{
-
+  &__inner {
   }
-  &__menu-box{
-
+  &__menu-box {
   }
-  &__menu{
+  &__menu {
     padding-left: 17px;
     margin-top: 40px;
     padding-bottom: 2px;
     // border-bottom: 2px solid #cccccc;
     display: flex;
     justify-content: space-between;
-    li{
+    li {
       display: inline-block;
-      &:focus{
+      &:focus {
         border-bottom: 2px solid $red;
         overflow: hidden;
       }
-      a{
+      a {
         font-size: 18px;
         line-height: 50px;
         font-weight: 600;
         text-transform: uppercase;
-        
       }
     }
   }
-  &__items{
+  &__items {
     margin-top: 70px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-
   }
-  &__item{
+  &__item {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -683,38 +696,34 @@ padding-right: 25px; /* Separate bars from container */
     max-width: 320px;
     margin-top: 20px;
     width: 100%;
-    &-img{
+    &-img {
       width: 320px;
       height: 223px;
       background-color: #000;
-
     }
-    &-content{
+    &-content {
       background-color: #1e2e3e;
       width: 100%;
-
     }
-    &-title{
+    &-title {
       color: #fff;
       font-size: 20px;
       line-height: 50px;
       font-weight: 500;
       padding-left: 17px;
     }
-    &-subtitle{
+    &-subtitle {
       color: #fff;
       font-size: 16px;
       line-height: 50px;
       padding-left: 17px;
-
-
     }
-    &-btn{
+    &-btn {
       padding-bottom: 17px;
       padding-left: 17px;
       font-size: 14px;
       color: #fff;
-      a{
+      a {
         border-bottom: 1px solid #fff;
       }
     }
@@ -724,60 +733,57 @@ padding-right: 25px; /* Separate bars from container */
 /* End portfolio section */
 
 /* start portfolio-single page */
-.portfolio__single{
-  &-box{
-    
+.portfolio__single {
+  &-box {
   }
-  &-wrapper{
+  &-wrapper {
     margin-bottom: 35px;
-
   }
-  &-img{
+  &-img {
     max-width: 750px;
     height: 447px;
     background-color: #000;
     margin: 0 auto;
   }
-  &-content{
+  &-content {
     background-color: #3d4f59;
     max-width: 750px;
     margin: 0 auto;
   }
-  &-title{
+  &-title {
     font-size: 28px;
     line-height: 50px;
     padding-left: 17px;
     color: #fff;
-    a{
-      span{
+    a {
+      span {
         font-size: 16px;
         padding-left: 10px;
       }
     }
   }
-  &-subtitle{
+  &-subtitle {
     font-size: 18px;
     line-height: 50px;
     padding-left: 17px;
     color: #fff;
   }
-  &-text{
+  &-text {
     font-size: 16px;
     line-height: 26px;
     max-width: 750px;
     margin: 0 auto;
- 
   }
-  &-icons{
-    &-list{
+  &-icons {
+    &-list {
       max-width: 750px;
       margin: 0 auto;
       padding-top: 35px;
-      li{
+      li {
         display: inline-block;
-        font-size: 30px; 
+        font-size: 30px;
         margin-right: 15px;
-        &:last-child{
+        &:last-child {
           margin-right: 0;
         }
       }
@@ -785,7 +791,17 @@ padding-right: 25px; /* Separate bars from container */
   }
 }
 
-
 /* end portfolio-single page */
+
+/* Modal popup */
+#modal{
+  .contact__form{
+    input{
+
+    }
+  }
+}
+/* End Modal popup */
+
 
 @import "media";

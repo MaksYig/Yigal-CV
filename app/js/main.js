@@ -1,3 +1,29 @@
+if (window.matchMedia("(min-width: 1360px )").matches) {
+  $(".header__burger").on("click", function () {
+    $(".header__burger").toggleClass("closed");
+    $(".asside__bar").toggleClass("close");
+  });
+}
+if (window.matchMedia("(max-width: 1360px ) and (min-width:830px)").matches) {
+  $(".header__burger").removeClass("closed");
+  $(".asside__bar").hide();
+  $(".header__burger").on("click", function () {
+    $(".header__burger").toggleClass("closed");
+    $(".asside__bar").show().addClass("medium");
+    $(this).on("click", function () {
+      $(".asside__bar").removeClass("medium").addClass("close");
+    });
+    
+  });
+}
+
+// if (window.matchMedia("(min-width: 1360px)").matches) {
+//   $(".header__burger").on("click", function () {
+//     $(".header__burger").toggleClass("active");
+//     $(".asside__bar").toggleClass("active");
+//   });
+// }
+
 $(function () {
   (function () {
     "use strict";
@@ -83,12 +109,4 @@ $(function () {
     //анимируем переход на расстояние - top за 1500 мс
     $("body,html").animate({ scrollTop: top }, 1500);
   });
-
-  $(".header__burger").on("click", function () {
-    $(".header__burger").toggleClass("close");
-    $(".asside__bar").toggleClass("close");
-    
-  });
-
-
 });
