@@ -174,7 +174,10 @@
   .footer__copy {
     font-size: 10px;
   }
-  .fancybox-slide {
-padding: 3px;
+  
+  .fancybox-active {
+    .fancybox-slide--iframe{
+      padding: 0;
+    }
   }
 }
