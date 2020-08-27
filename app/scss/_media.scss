@@ -24,15 +24,56 @@
   .education__wrapper,
   .skills__wrapper,
   .contact__wrapper {
-    padding: 20px 20px 40px 20px;
+    padding: 20px 20px 40px 50px;
   }
   .timeline ul li:nth-child(odd) div {
     left: 35px;
   }
-  .skills__progress-inner{
+  .skills__progress-inner {
     flex-wrap: wrap;
     justify-content: center;
   }
+}
+@media (max-width: 1360px) and (min-width: 831px) {
+  .asside__bar {
+    display: flex;
+    max-width: 100%;
+    width: 100vw;
+    padding: 10px 0;
+  }
+  .asside__bar-menu {
+    width: 100%;
+    padding: 0px 10px;
+  }
+  .asside__bar-menu-list {
+    display: flex;
+    margin-top: 10px;
+    justify-content: space-between;
+    li {
+      padding: 0;
+    }
+  }
+  .asside__bar-avatar {
+    margin-left: 60px;
+    width: 170px;
+    height: 90px;
+    background-position: center;
+  }
+  .asside__bar-name {
+    font-size: 13px;
+    line-height: 15px;
+  }
+  .asside__bar-name,
+  .asside__bar-position {
+    padding-left: 10px;
+  }
+  .asside__bar-position {
+    font-size: 8px;
+    line-height: 15px;
+}
+.header__burger{
+  position: fixed;
+}
 }
 
 @media (max-width: 830px) {
@@ -49,9 +90,30 @@
     font-size: 14px;
     line-height: 40px;
   }
-  .contact__wrapper{
+  .contact__wrapper {
     flex-wrap: wrap;
     justify-content: center;
+  }
+  .header__burger {
+    position: fixed;
+  }
+  .asside__bar {
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  .asside__bar-menu-list a {
+    font-size: 28px;
+    line-height: 50px;
+  }
+  .asside__bar-menu-list {
+    margin-top: 15px;
+    li {
+    }
   }
 }
 
@@ -79,22 +141,20 @@
     font-size: 13px;
   }
   .timeline ul li div {
-    width: calc(100vw - 120px);
+    width: calc(100vw - 135px);
   }
   .contact__item {
     margin-top: 25px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-
+  }
 }
-
-}
-@media(max-width:580px){
-  .contact__message{
+@media (max-width: 580px) {
+  .contact__message {
     margin-right: 0;
   }
-  .footer__copy{
+  .footer__copy {
     font-size: 10px;
   }
 }
