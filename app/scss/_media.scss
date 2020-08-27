@@ -23,7 +23,8 @@
   .work__wrapper,
   .education__wrapper,
   .skills__wrapper,
-  .contact__wrapper {
+  .contact__wrapper,
+  .portfolio__wrapper {
     padding: 20px 20px 40px 50px;
   }
   .timeline ul li:nth-child(odd) div {
@@ -55,7 +56,7 @@
   }
   .asside__bar-avatar {
     margin-left: 60px;
-    width: 170px;
+    width: 140px;
     height: 90px;
     background-position: center;
   }
@@ -70,10 +71,10 @@
   .asside__bar-position {
     font-size: 8px;
     line-height: 15px;
-}
-.header__burger{
-  position: fixed;
-}
+  }
+  .header__burger {
+    position: fixed;
+  }
 }
 
 @media (max-width: 830px) {
@@ -113,6 +114,23 @@
   .asside__bar-menu-list {
     margin-top: 15px;
     li {
+    }
+  }
+  .portfolio__items{
+    justify-content: center;
+  }
+  .portfolio__item{
+    max-width: 270px;
+    width: 100%;
+    margin-right: 10px;
+    margin-top: 25px;
+  }
+  .portfolio__item-img{
+    max-width: 270px;
+    width: 100%;
+    img{
+      max-width: 270px;
+      width: 100%;
     }
   }
 }
