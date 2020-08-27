@@ -58,7 +58,6 @@
     margin-left: 60px;
     width: 140px;
     height: 90px;
-    background-position: center;
   }
   .asside__bar-name {
     font-size: 13px;
@@ -116,19 +115,19 @@
     li {
     }
   }
-  .portfolio__items{
+  .portfolio__items {
     justify-content: center;
   }
-  .portfolio__item{
+  .portfolio__item {
     max-width: 270px;
     width: 100%;
     margin-right: 10px;
     margin-top: 25px;
   }
-  .portfolio__item-img{
+  .portfolio__item-img {
     max-width: 270px;
     width: 100%;
-    img{
+    img {
       max-width: 270px;
       width: 100%;
     }

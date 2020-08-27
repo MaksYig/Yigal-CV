@@ -24,7 +24,7 @@
     width: 275px;
     height: 222px;
     position: relative;
-    background-position: 0;
+    // background-position: 0;
     background-repeat: no-repeat;
     background-size: cover;
     display: flex;
@@ -226,7 +226,7 @@
   &-picture {
     width: 320px;
     height: 465px;
-    background-position-y: -45px;
+    background-position-y: top;
     background-position-x: center;
     background-size: cover;
     background-repeat: no-repeat;
