@@ -12,7 +12,7 @@
   transition: top 1.2s;
 }
 
-.asside__bar{
+.asside__bar {
   background-color: $bg;
   max-width: 275px;
   position: fixed;
@@ -66,14 +66,12 @@
       font-size: 22px;
       line-height: 62px;
       color: #ffffff;
-      &:focus{
-        color:$red;
+      &:focus {
+        color: $red;
       }
     }
   }
 }
-
-
 
 .header__burger.unactive {
   position: fixed;
@@ -106,7 +104,7 @@
     transform: rotate(-135deg);
     transition: all 0.5s;
   }
-  span{
+  span {
     transform: scale(0);
     transition: scale 0.8s;
   }
@@ -372,12 +370,12 @@ time {
   .timeline ul li {
     margin-left: 20px;
   }
-  .timeline ul li div {
-    width: calc(100vw - 91px);
-  }
-  .timeline ul li:nth-child(even) div {
-    left: 45px;
-  }
+  // .timeline ul li div {
+  //   width: calc(100vw - 91px);
+  // }
+  // .timeline ul li:nth-child(even) div {
+  //   left: 35px;
+  // }
   .timeline ul li:nth-child(even) div::before {
     left: -15px;
     border-width: 8px 16px 8px 0;
@@ -531,7 +529,7 @@ padding-right: 25px; /* Separate bars from container */
       width: 100%;
       max-height: 35px;
       margin-bottom: 20px;
-      padding:5px 0 5px 12px;
+      padding: 5px 0 5px 12px;
       outline: none;
     }
     textarea {
@@ -556,7 +554,6 @@ padding-right: 25px; /* Separate bars from container */
   }
   &__contacts {
     width: 350px;
-    
   }
   &__item {
   }
@@ -705,8 +702,8 @@ padding-right: 25px; /* Separate bars from container */
       width: 320px;
       height: 250px;
       background-color: #000;
-      
-      img{
+
+      img {
         width: 320px;
         height: 250px;
         object-fit: cover;
@@ -730,7 +727,7 @@ padding-right: 25px; /* Separate bars from container */
       padding-left: 17px;
       font-weight: 500;
     }
-    &-text{
+    &-text {
       color: #fff;
       font-size: 14px;
       padding: 0 17px;
@@ -749,15 +746,15 @@ padding-right: 25px; /* Separate bars from container */
     }
   }
 }
-.icons{
-  &__list{
+.icons {
+  &__list {
     padding-left: 17px;
     padding-bottom: 20px;
-    li{
+    li {
       display: inline-block;
     }
   }
-  &__name{
+  &__name {
     padding-left: 17px;
     color: $red;
     margin-bottom: 7px;
@@ -827,14 +824,12 @@ padding-right: 25px; /* Separate bars from container */
 /* end portfolio-single page */
 
 /* Modal popup */
-#modal{
-  .contact__form{
-    input{
-
+#modal {
+  .contact__form {
+    input {
     }
   }
 }
 /* End Modal popup */
-
 
 @import "media";

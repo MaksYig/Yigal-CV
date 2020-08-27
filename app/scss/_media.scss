@@ -132,6 +132,10 @@
       width: 100%;
     }
   }
+  .timeline ul li:nth-child(even) div {
+    left: 35px;
+  }
+
 }
 
 @media (max-width: 670px) {
@@ -167,6 +171,7 @@
     justify-content: center;
   }
 }
+
 @media (max-width: 580px) {
   .contact__message {
     margin-right: 0;
@@ -174,9 +179,9 @@
   .footer__copy {
     font-size: 10px;
   }
-  
+
   .fancybox-active {
-    .fancybox-slide--iframe{
+    .fancybox-slide--iframe {
       padding: 0;
     }
   }
