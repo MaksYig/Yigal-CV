@@ -179,6 +179,13 @@
   .footer__copy {
     font-size: 10px;
   }
-
+  #map__frame {
+    width: 100vw;
+      height: 100vh;
+    .iframe__map {
+      height: 80vh;
+      width: 80vw;
+    }
+  }
 
 }
