@@ -405,19 +405,21 @@
 
 <!-- Popup windo -->
 <div style="display: none;" id="modal">
-  <form class="contact__form">
+  <form class="contact__form"id="ajax-contact-form" enctype="multipart/form-data" method="post" >
 
-		<!-- Hidden Required Fields -->
-		<input type="hidden" name="project_name" value="CV Site">
-		<input type="hidden" name="admin_email" value="yigal.maksimov@gmail.com">
-		<input type="hidden" name="form_subject" value="Message from BTN CV Site">
-		<!-- END Hidden Required Fields -->
-
-
-    <input type="text" placeholder="Name">
-    <input type="text" placeholder="E-mail">
-    <textarea cols="30" rows="10" placeholder="Message"></textarea>
-    <button class="message__btn" type="submit">
+    <div class="form-group">
+      <label for="nameFF">Имя:</label>
+      <input id="nameFF" name="nameFF" type="text" required>
+    </div>
+    <div class="form-group">
+      <label for="contactFF">E-mail:</label>
+      <input id="contactFF" name="contactFF" type="email" required>
+    </div>
+    <div class="form-group">
+      <label for="projectFF">Сообщение</label>
+      <textarea id="projectFF" name="projectFF" cols="40" rows="3"></textarea>
+    </div>
+    <button class="message__btn" type="submit" id="submitFF" >
       Hire Me!
     </button>
   </form>
