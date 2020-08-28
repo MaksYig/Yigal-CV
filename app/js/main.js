@@ -121,32 +121,25 @@ $(function () {
     });
   });
  
-  $(function () {
-    document.getElementById("ajax-contact-form").addEventListener(
-      "submit",
-      function (evt) {
-        var http = new XMLHttpRequest(),
-          f = this;
-        var th = $(this);
-        evt.preventDefault();
-        http.open("POST", "contact.php", true);
-        http.onreadystatechange = function () {
-          if (http.readyState == 4 && http.status == 200) {
-            alert(http.responseText);
-            if (http.responseText.indexOf(f.nameFF.value) == 0) {
-              // очистить поля формы, если в ответе первым словом будет имя отправителя (nameFF)
-              th.trigger("reset");
-            }
-          }
-        };
-        http.onerror = function () {
-          alert("Error, try one more time");
-        };
-        http.send(new FormData(f));
-      },
-      false
-    );
-  });
+  $(document).ready(function() {
 
+    //E-mail Ajax Send
+    $("form").submit(function() { //Change
+      var th = $(this);
+      $.ajax({
+        type: "POST",
+        url: "mail.php", //Change
+        data: th.serialize()
+      }).done(function() {
+        alert("Thank you for your message!");
+        setTimeout(function() {
+          // Done Functions
+          th.trigger("reset");
+        }, 1000);
+      });
+      return false;
+    });
+  
+  });
 
 });
