@@ -68,43 +68,7 @@ $(function () {
     window.addEventListener("scroll", callbackFunc);
   })();
 
-  jQuery(document).ready(function () {
-    /*MODIFICATION START*/
-    jQuery(document).on("scroll", function () {
-      if (jQuery("html,body").scrollTop() > jQuery(".skills__progress-inner").height()) {
-        /*MODIFICATION END*/
-        jQuery(".progress-bar").each(function () {
-          jQuery(this)
-            .find(".progress-content")
-            .animate(
-              {
-                width: jQuery(this).attr("data-percentage"),
-              },
-              8000
-            );
 
-          jQuery(this)
-            .find(".progress-number-mark")
-            .animate(
-              {
-                left: jQuery(this).attr("data-percentage"),
-              },
-              {
-                duration: 8000,
-                step: function (now, fx) {
-                  var data = Math.round(now);
-                  jQuery(this)
-                    .find(".percent")
-                    .html(data + "%");
-                },
-              }
-            );
-        });
-        /*MODIFICATION START*/
-      }
-    });
-    /*MODIFICATION END*/
-  });
   $(document).ready(function () {
     //Плавно прокручивает страницу до id-ка
     //Ссылка должна быть с id на якорь и классом prokrutkaslide.
@@ -141,5 +105,22 @@ $(function () {
     });
   
   });
+
+
+  var offsetTop = $('#skills').offset().top;
+	$(window).scroll(function() {
+  var height = $(window).height();
+  if($(window).scrollTop()+height > offsetTop) {
+    jQuery('.skillbar').each(function(){
+      jQuery(this).find('.skillbar-bar').animate({
+        width:jQuery(this).attr('data-percent')
+      },3000);
+    });
+  }
+  });
+
+
+
+
 
 });
