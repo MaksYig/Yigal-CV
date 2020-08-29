@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('../fonts/icomoon.eot?wz8u67');
-  src:  url('../fonts/icomoon.eot?wz8u67#iefix') format('embedded-opentype'),
-    url('../fonts/icomoon.ttf?wz8u67') format('truetype'),
-    url('../fonts/icomoon.woff?wz8u67') format('woff'),
-    url('../fonts/icomoon.svg?wz8u67#icomoon') format('svg');
+  src:  url('../fonts/icomoon.eot?dk2zkv');
+  src:  url('../fonts/icomoon.eot?dk2zkv#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?dk2zkv') format('truetype'),
+    url('../fonts/icomoon.woff?dk2zkv') format('woff'),
+    url('../fonts/icomoon.svg?dk2zkv#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -51,6 +51,10 @@
 .icon-sass:before {
   content: "\e906";
   color: #c69;
+}
+.icon-wordpress:before {
+  content: "\e907";
+  color: #21759b;
 }
 .icon-home:before {
   content: "\f015";
