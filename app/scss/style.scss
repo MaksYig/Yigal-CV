@@ -834,5 +834,29 @@ padding-right: 25px; /* Separate bars from container */
   }
 }
 /* End Modal popup */
+/* start last work section */
+.last__work{
+  .portfolio__wrapper{
+    .portfolio__inner{
+      .last__work-btn{
+        margin-top: 45px;
+        font-size: 16px;
+        text-align: center;
+        font-weight: 700;
+        a{
+          background-color: $red;
+          border-radius:15.5px;
+          padding: 10px 15px;
 
+          
+        }
+      }
+      .portfolio__items{
+        justify-content: space-around;
+      }
+    }
+  }
+}
+
+/* end last work section */
 @import "media";

@@ -71,7 +71,7 @@ $(function () {
   jQuery(document).ready(function () {
     /*MODIFICATION START*/
     jQuery(document).on("scroll", function () {
-      if (jQuery("html,body").scrollTop() > jQuery(".skills").height()) {
+      if (jQuery("html,body").scrollTop() > jQuery(".skills__progress-inner").height()) {
         /*MODIFICATION END*/
         jQuery(".progress-bar").each(function () {
           jQuery(this)
