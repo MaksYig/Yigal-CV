@@ -202,9 +202,21 @@
   }
   #map__frame {
     width: 100vw;
-      height: 100%;
+    height: 100%;
     .iframe__map {
-      
     }
+  }
+  .portfolio__inner.main {
+    margin-top: 50px;
+  }
+  .portfolio__wrapper.main
+    .portfolio__items.main
+    .slick-btn.slick-prev.icon-arrow-left.slick-arrow {
+    right: 50px;
+  }
+  .portfolio__wrapper.main
+    .portfolio__items.main
+    .slick-btn.slick-next.icon-arrow-right.slick-arrow {
+    right: 0;
   }
 }

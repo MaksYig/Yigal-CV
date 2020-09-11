@@ -1,42 +1,76 @@
-if (window.matchMedia("(min-width: 1360px )").matches) {
-  $(".header__burger").on("click", function () {
-    $(".header__burger, .asside__bar").toggleClass("unactive");
-  });
-}
-if (window.matchMedia("(max-width: 1360px ) and (min-width:830px)").matches) {
-  $(".header__burger").removeClass("unactive");
-  $(".asside__bar").addClass("unactive");
-  $(".header__burger").on("click", function (event) {
-    $(".header__burger").addClass("unactive");
-    $(".asside__bar").removeClass("unactive");
-    $(this).on("click", function () {
-      $(".header__burger,.asside__bar").toggleClass("unactive");
-    });
-  });
-}
-if (window.matchMedia("(max-width: 830px )").matches) {
-  $(".header__burger").removeClass("unactive");
-  $(".asside__bar").addClass("unactive");
-  $(".header__burger").on("click", function (event) {
-    $(".header__burger").addClass("unactive");
-    $(".asside__bar").removeClass("unactive");
-    $("body").addClass("block");
-    $(this).on("click", function () {
-      $(".header__burger,.asside__bar").toggleClass("unactive");
-      $("body").toggleClass("block");
-    });
-    $('.asside__bar-menu-list li a').on('click',function(){
-      $(".header__burger").removeClass("unactive");
-      $(".asside__bar").addClass("unactive");
-      $("body").removeClass("block");
-    })
-  });
-}
-
 $(function () {
-  (function () {
-    "use strict";
+  const burgerMenu = document.querySelector(".header__burger"),
+    assideBar = document.querySelector(".asside__bar"),
+    menuButton = document.querySelectorAll(".asside__bar-menu-list li a");
 
+  function closeAsside() {
+    burgerMenu.classList.remove("unactive");
+    assideBar.classList.add("unactive");
+  }
+  function openAsside() {
+    burgerMenu.classList.add("unactive");
+    assideBar.classList.remove("unactive");
+  }
+
+  function assideBarTriggle() {
+    burgerMenu.addEventListener("click", () => {
+      if (assideBar.classList.contains("unactive")) {
+        openAsside();
+      } else {
+        closeAsside();
+      }
+    });
+  }
+  assideBarTriggle();
+
+  if (window.matchMedia("(min-width: 1360px )").matches) {
+    openAsside();
+  }
+  if (window.matchMedia("(max-width: 1360px ) and (min-width:830px)").matches) {
+    openAsside();
+  }
+
+  if (window.matchMedia("(max-width: 830px )").matches) {
+    closeAsside();
+    const body = document.querySelector("body");
+    burgerMenu.addEventListener("click", () => {
+      body.classList.toggle("block");
+    });
+    menuButton.forEach((item) => {
+      item.addEventListener("click", () => {
+        closeAsside();
+      });
+    });
+  }
+
+  $(".portfolio__items.main").slick({
+    slidesToShow: 3,
+    slidesToScroll: 1,
+    prevArrow:
+      '<button type="button" class="slick-btn slick-prev icon-arrow-left">',
+    // /* Right btn */
+    nextArrow:
+      '<button type="button" class="slick-btn slick-next icon-arrow-right">',
+    responsive: [
+      {
+        breakpoint: 1074,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        },
+      },
+      {
+        breakpoint: 650,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          fade: true,
+        },
+      },
+    ],
+  });
+
+  (function () {
     // define variables
     var items = document.querySelectorAll(".timeline li");
 
@@ -68,59 +102,130 @@ $(function () {
     window.addEventListener("scroll", callbackFunc);
   })();
 
+  /*  Scroll to function (menu)*/
 
-  $(document).ready(function () {
-    //Плавно прокручивает страницу до id-ка
-    //Ссылка должна быть с id на якорь и классом prokrutkaslide.
-    $(".scroll").click(function () {
-      var el = $(this).attr("href");
-      el = el.replace(/[^\#]*/, ""); //вытаскиваем id из ссылки
-      $("body,html").animate(
-        {
-          scrollTop: $(el).offset().top,
-        },
-        2000
-      );
-      return false;
-    });
-  });
- 
-  $(document).ready(function() {
+  const anchors = document.querySelectorAll("a.scroll");
 
-    //E-mail Ajax Send
-    $("form").submit(function() { //Change
-      var th = $(this);
-      $.ajax({
-        type: "POST",
-        url: "mail.php", //Change
-        data: th.serialize()
-      }).done(function() {
-        alert("Thank you for your message!");
-        setTimeout(function() {
-          // Done Functions
-          th.trigger("reset");
-        }, 1000);
+  for (let anchor of anchors) {
+    anchor.addEventListener("click", function (e) {
+      e.preventDefault();
+
+      const blockID = anchor.getAttribute("href");
+      document.querySelector(blockID).scrollIntoView({
+        behavior: "smooth",
+        block: "start",
       });
-      return false;
-    });
-  
-  });
-
-
-  var offsetTop = $('#skills').offset().top;
-	$(window).scroll(function() {
-  var height = $(window).height();
-  if($(window).scrollTop()+height > offsetTop) {
-    jQuery('.skillbar').each(function(){
-      jQuery(this).find('.skillbar-bar').animate({
-        width:jQuery(this).attr('data-percent')
-      },3000);
     });
   }
+  /* End Scroll to function */
+
+  const forms = document.querySelectorAll("form");
+  const message = {
+    loading: "img/spiner.svg",
+    succes: "Thanks, for contacting me. I will contact you soon!",
+    failure: "Error.Please try again",
+    input: "Please fill the form",
+  };
+
+  forms.forEach((item) => {
+    postData(item);
   });
 
+  function postData(form) {
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
 
+      const statusMesage = document.createElement("img");
+      statusMesage.src = message.loading;
+      statusMesage.style.cssText = `
+      display:block;
+      margin: 0 auto;
+      weidth:30px;
+      height:30px;
+      position:absolute;
+      `;
+      form.append(statusMesage);
 
+      const request = new XMLHttpRequest();
+      request.open("POST", "mail.php");
+      // request.setRequestHeader('content-type', 'multipart/form-data');
+      const formData = new FormData(form);
+      request.send(formData);
+      request.addEventListener("load", () => {
+        if (request.status === 200) {
+          console.log(request.response);
+          showThanksModal(message.succes);
+          form.reset();
+          statusMesage.remove();
+        } else {
+          showThanksModal(message.failure);
+        }
+      });
+    });
+  }
 
+  const modal = document.querySelector(".modal"),
+    modalClose = document.querySelector("[data-close]");
 
+  function closeModal() {
+    modal.style.display = "none";
+    document.body.classList.remove("block");
+  }
+  function openModal() {
+    modal.style.display = "block";
+    document.body.classList.add("block");
+  }
+
+  function ModelTriger() {
+    const open = document.querySelector("[data-open]");
+    open.addEventListener("click", openModal);
+
+    modalClose.addEventListener("click", closeModal);
+
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  }
+  ModelTriger();
+
+  function showThanksModal(message) {
+    const prevModalBox = document.querySelector(".modal__dialog");
+    modal.style.display = "block";
+    prevModalBox.style.display = "none";
+    const thanksModal = document.createElement("div");
+    thanksModal.classList.add("modal__dialog");
+    thanksModal.innerHTML = `
+          <div class="modal__content">
+          <div class="modal__title">
+          ${message}</div></div>
+          `;
+    document.querySelector(".modal").append(thanksModal);
+    setTimeout(() => {
+      thanksModal.remove();
+      prevModalBox.style.display = "block";
+      modal.style.display = "none";
+      closeModal();
+    }, 4000);
+  }
+
+  // var mixer = mixitup(".portfolio__items");
+
+  let offsetTop = $("#skills").offset().top;
+  $(window).scroll(function () {
+    var height = $(window).height();
+    if ($(window).scrollTop() + height > offsetTop) {
+      jQuery(".skillbar").each(function () {
+        jQuery(this)
+          .find(".skillbar-bar")
+          .animate(
+            {
+              width: jQuery(this).attr("data-percent"),
+            },
+            3000
+          );
+      });
+    }
+  });
 });

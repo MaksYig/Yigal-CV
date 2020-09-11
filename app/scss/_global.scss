@@ -28,12 +28,12 @@ p {
 }
 
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 16px;
   color: $grey;
   font-weight: 400;
 }
-body.block{
+body.block {
   overflow: hidden;
 }
 .container {
@@ -43,14 +43,14 @@ body.block{
   padding: 0 10px;
 }
 
-.section__name{
+.section__name {
   font-size: 32px;
   font-weight: 600;
   position: relative;
   display: inline-block;
   padding-bottom: 20px;
 
-  &:after{
+  &:after {
     position: absolute;
     content: "";
     width: 75px;
@@ -59,15 +59,14 @@ body.block{
     left: 0;
     background-color: $red;
   }
-  
 }
-.form__title{
+.form__title {
   text-align: center;
   margin-bottom: 15px;
   font-size: 14px;
   font-weight: 600;
 }
-.form__text{
+.form__text {
   font-size: 8px;
   font-weight: 300;
   text-align: center;
