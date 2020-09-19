@@ -7,8 +7,6 @@ let rename = require("gulp-rename");
 let del = require("del");
 let autoprefixer = require("gulp-autoprefixer");
 
-
-
 gulp.task("clean", async function () {
   del.sync("dist");
 });
@@ -29,9 +27,7 @@ gulp.task("scss", function () {
 });
 
 gulp.task("html", function () {
-  return gulp
-    .src("app/**/*.html")
-    .pipe(browserSync.reload({ stream: true }));
+  return gulp.src("app/**/*.html").pipe(browserSync.reload({ stream: true }));
 });
 
 gulp.task("script", function () {
