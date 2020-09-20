@@ -1,4 +1,4 @@
-$(function () {
+
   const burgerMenu = document.querySelector(".header__burger"),
     assideBar = document.querySelector(".asside__bar"),
     menuButton = document.querySelectorAll(".asside__bar-menu-list li a");
@@ -70,6 +70,8 @@ $(function () {
     ],
   });
 
+
+ 
   (function () {
     // define variables
     var items = document.querySelectorAll(".timeline li");
@@ -107,7 +109,7 @@ $(function () {
   const anchors = document.querySelectorAll("a.scroll");
 
   for (let anchor of anchors) {
-    anchor.addEventListener("click", function (e) {
+    anchor.addEventListener("click",function (e) {
       e.preventDefault();
 
       const blockID = anchor.getAttribute("href");
@@ -211,7 +213,7 @@ $(function () {
   }
 
   // var mixer = mixitup(".portfolio__items");
-
+  $(function () {
   try {
     let offsetTop = $("#skills").offset().top;
     $(window).scroll(function () {
@@ -230,4 +232,5 @@ $(function () {
       }
     });
   } catch (e) {}
+
 });
