@@ -59,6 +59,7 @@ gulp.task("css", function () {
       "node_modules/rateyo/src/jquery.rateyo.css",
       "node_modules/ion-rangeslider/css/ion.rangeSlider.css",
       "node_modules/@fancyapps/fancybox/dist/jquery.fancybox.css",
+      "node_modules/animate.css/animate.css",
     ])
     .pipe(concat("_libs.scss"))
     .pipe(gulp.dest("app/scss"))

@@ -873,4 +873,19 @@ time {
     line-height: 36px;
   }
 }
+
+
+
+.pageup {
+  opacity: 0;
+width: 26px ;
+height: 26px;
+position: fixed;
+bottom: 80px;
+right: 5%;
+z-index: 30;
+cursor: pointer;
+// border: 1px solid #fb6470;
+  transition: 1s all;
+
 @import "media";
