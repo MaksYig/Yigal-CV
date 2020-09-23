@@ -232,6 +232,21 @@
     background-repeat: no-repeat;
     border-radius: 50px;
   }
+  &-cv{
+    margin-top: 20px;
+    font-size: 16px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    a{
+      color: #fff;
+      background-color: $red;
+      padding: 7px 10px;
+      border-radius:7px;
+      text-transform: uppercase;
+    }
+  }
 }
 
 /* End about me section */
