@@ -73,6 +73,9 @@ assideBar('.header__burger','.asside__bar');
     links.forEach(link => {
         link.addEventListener('click', function(event) {
             event.preventDefault();
+            if (event.target === link){
+              
+            }
 
             let widthTop = document.documentElement.scrollTop,
                 hash = this.hash,
