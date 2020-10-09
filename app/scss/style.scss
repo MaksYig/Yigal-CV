@@ -19,10 +19,28 @@
   transition: all 1.5s;
   top: 0;
   z-index: 5;
-
+  &-social {
+    &-list {
+      display: flex;
+      padding: 15px 0;
+      justify-content: center;
+      li {
+        & + li {
+          margin-left: 40px;
+        }
+        a {
+          font-size: 20px;
+          color: #fff;
+          &:hover {
+            color: $red;
+          }
+        }
+      }
+    }
+  }
   &-avatar {
     width: 275px;
-    height: 222px;
+    height: 240px;
     position: relative;
     // background-position: 0;
     background-repeat: no-repeat;
@@ -67,7 +85,8 @@
       line-height: 62px;
       color: #ffffff;
       &:focus,
-      &:active {
+      &:active,
+      &:hover {
         color: $red;
       }
     }
@@ -89,7 +108,7 @@
     width: 30px;
     height: 3px;
     background-color: $red;
-    top: 6px;
+    top: 10px;
     left: 0;
     transform: rotate(135deg);
     transition: all 0.8s;
@@ -100,7 +119,7 @@
     width: 30px;
     height: 3px;
     background-color: $red;
-    top: 6px;
+    top: 10px;
     left: 0;
     transform: rotate(-135deg);
     transition: all 0.5s;
@@ -185,6 +204,7 @@
       background-color: $red;
       padding: 15px 43px;
       border-radius: 15.5px;
+      font-weight: 600;
     }
   }
 }
@@ -221,10 +241,9 @@
         span {
           font-weight: 400;
         }
-        a:hover{
+        a:hover {
           color: $red;
           transform: translateX(15px);
-          
         }
       }
     }
@@ -576,13 +595,14 @@ time {
     input {
       max-width: 265px;
       width: 100%;
-      max-height: 35px;
+      height: 40px;
       margin-bottom: 20px;
-      padding: 5px 0 5px 12px;
+      padding: 5px 5px 5px 12px;
       outline: none;
     }
     textarea {
       padding-left: 12px;
+      padding-right: 7px;
       padding-top: 12px;
       height: 95px;
       max-width: 265px;
@@ -596,9 +616,11 @@ time {
       outline: none;
       cursor: pointer;
       border: none;
-      width: 95px;
-      height: 35px;
+      width: 120px;
+      height: 50px;
+      font-weight: 600;
       font-size: 16px;
+      border-radius: 10px;
     }
   }
   &__contacts {
@@ -612,7 +634,7 @@ time {
     font-size: 20px;
     font-weight: 700;
     margin-bottom: 35px;
-    a:hover{
+    a:hover {
       color: $red;
       transform: scale(1.2);
     }
@@ -650,7 +672,7 @@ time {
       font-size: 16px;
       font-weight: 500;
     }
-    a:hover{
+    a:hover {
       color: $red;
       transform: scale(1.2);
     }
@@ -674,7 +696,7 @@ time {
       font-size: 16px;
       font-weight: 500;
     }
-    a:hover{
+    a:hover {
       color: $red;
       transform: scale(1.2);
     }
