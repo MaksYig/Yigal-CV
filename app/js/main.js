@@ -158,6 +158,8 @@ assideBar('.header__burger','.asside__bar');
   $(".portfolio__items.main").slick({
     slidesToShow: 3,
     slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 2500,
     prevArrow:
       '<button type="button" class="slick-btn slick-prev icon-arrow-left">',
     // /* Right btn */
@@ -176,7 +178,7 @@ assideBar('.header__burger','.asside__bar');
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          fade: true,
+          // fade: true,
         },
       },
     ],
@@ -309,8 +311,8 @@ assideBar('.header__burger','.asside__bar');
     }, 4000);
   }
 
-  // var mixer = mixitup(".portfolio__items");
-  $(function () {
+
+$(function () {
   try {
     let offsetTop = $("#skills").offset().top;
     $(window).scroll(function () {
@@ -331,3 +333,65 @@ assideBar('.header__burger','.asside__bar');
   } catch (e) {}
 
 });
+
+/* Function potfolio toggle menu */
+
+function portfolioToogleMenu (){
+  try {
+    const potfolioBtnWrapper = document.querySelectorAll('.portfolio__menu-box button');
+    const portfolioItem = document.querySelectorAll('.portfolio .portfolio__item');
+    const portfolioWrapper = document.querySelector('.portfolio .portfolio__items');
+    console.log(portfolioItem);
+
+    potfolioBtnWrapper.forEach(button => {
+      
+      button.addEventListener('click', (e) => {
+        button.focus();
+        if (button.dataset.filter == 'jsscript'){
+          console.log(e.target.onfocus);
+          portfolioItem.forEach(item =>{
+            item.classList.add('animate__animated');
+            item.classList.add('animate__fadeIn');
+            item.style.display="";
+            if (item.dataset.cont == 'landing'){
+              item.classList.remove('animate__fadeIn');
+              item.classList.add('animate__fadeOut');
+              setTimeout(function (){
+                item.classList.remove('animate__fadeOut');
+                item.style.display = "none";
+              },200);
+            }
+          });
+        } else if(button.dataset.filter == 'landing'){
+          portfolioItem.forEach(item =>{
+            item.classList.add('animate__animated');
+            item.classList.add('animate__fadeIn');
+            item.style.display="";
+            if (item.dataset.cont == 'jsscript'){
+              item.classList.remove('animate__fadeIn');
+              item.classList.add('animate__fadeOut');
+              setTimeout(function (){
+                item.style.display = "none";
+                item.classList.remove('animate__fadeOut');
+
+              },200);
+              
+            }
+          });
+        } else if (button.dataset.filter == 'all'){
+          portfolioItem.forEach(item =>{
+            item.classList.add('animate__animated');
+            item.classList.add('animate__fadeIn');
+            item.style.display="";
+          });
+        }
+      });
+    });
+    
+    
+
+
+  }catch(e){}
+}
+
+portfolioToogleMenu();

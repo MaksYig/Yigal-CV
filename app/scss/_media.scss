@@ -180,6 +180,13 @@
     flex-direction: column;
     justify-content: center;
   }
+  .portfolio__menu-box{
+
+    button{
+      font-size: 12px;
+      max-width: 145px;
+    }
+  }
 }
 
 @media (max-width: 580px) {
@@ -221,5 +228,15 @@
     .portfolio__items.main
     .slick-btn.slick-next.icon-arrow-right.slick-arrow {
     right: 0;
+  }
+  .portfolio__menu-box{
+
+    button{
+      font-size: 12px;
+      max-width: 145px;
+      &+button{
+        margin-left: 10px;
+      }
+    }
   }
 }
