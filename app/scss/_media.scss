@@ -239,4 +239,18 @@
       }
     }
   }
+
+}
+
+@media (max-width:455px){
+  .diploms__item {
+    a{
+      img{
+        max-width: 275px ;
+      }
+    }
+  }
+  span{
+    font-size: 12px;
+  }
 }

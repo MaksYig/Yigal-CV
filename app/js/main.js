@@ -185,6 +185,19 @@ assideBar('.header__burger','.asside__bar');
   });
 
 
+  if (window.matchMedia("(max-width: 455px )").matches){
+      $(".diploms__wrapper").slick({
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+    arrows:false,
+  });
+  }
+
+
+
+
  
   (function () {
     // define variables

@@ -494,6 +494,30 @@ time {
     padding: 40px 0 40px 115px;
   }
 }
+
+.diploms__wrapper {
+  padding-top: 50px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+
+}
+.diploms__item {
+  margin: 0 auto;
+  a{
+    img{
+      max-width: 350px;
+      display: block;
+    }
+  }
+  span{
+    display: block;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 700;
+  }
+}
 /* end education section */
 
 /* start skills section */
